@@ -42,9 +42,7 @@
               :exclude="$parent.albumObject.artist.name"
               prefix="-"
             /></span>
-          <span
-            v-if="isAlbum && (track.mark & 1048576) === 1048576"
-            class="explicit-symbol"
+          <span v-if="isAlbum && (track.mark & 1048576) === 1048576" class="explicit-symbol"
           ><ExplicitSymbol
           /></span>
         </div>
@@ -62,7 +60,7 @@
 
     <div v-if="showAlbumName" class="album">
       <router-link v-if="album && album.id" :to="`/album/${album.id}`">{{
-          album.name
+        album.name
         }}</router-link>
       <div></div>
     </div>

@@ -16,7 +16,7 @@
       <div class="info">
         <div class="title" @click.right="openMenu"> {{ title }}</div>
         <div v-if="subtitle !== ''" class="subtitle" @click.right="openMenu">{{
-            subtitle
+          subtitle
           }}</div>
         <div class="artist">
           <span v-if="album.artist.id !== 104700">
@@ -28,14 +28,12 @@
           <span v-else>Compilation by Various Artists</span>
         </div>
         <div class="date-and-count">
-          <span
-            v-if="(album.mark & 1048576) === 1048576"
-            class="explicit-symbol"
+          <span v-if="(album.mark & 1048576) === 1048576" class="explicit-symbol"
           ><ExplicitSymbol
           /></span>
           <span :title="album.publishTime | formatDate">{{
-              new Date(album.publishTime).getFullYear()
-            }}</span>
+            new Date(album.publishTime).getFullYear()
+          }}</span>
           <span> · {{ album.size }} {{ $t('common.songs') }}</span
           >,
           {{ albumTime | formatTime('Human') }}
@@ -129,16 +127,16 @@
     <ContextMenu ref="albumMenu">
       <!-- <div class="item">{{ $t('contextMenu.addToQueue') }}</div> -->
       <div class="item" @click="likeAlbum(true)">{{
-          dynamicDetail.isSub
-            ? $t('contextMenu.removeFromLibrary')
-            : $t('contextMenu.saveToLibrary')
+        dynamicDetail.isSub
+        ? $t('contextMenu.removeFromLibrary')
+        : $t('contextMenu.saveToLibrary')
         }}</div>
       <div class="item">{{ $t('contextMenu.addToPlaylist') }}</div>
       <div class="item" @click="copyUrl(album.id)">{{
-          $t('contextMenu.copyUrl')
+        $t('contextMenu.copyUrl')
         }}</div>
       <div class="item" @click="openInBrowser(album.id)">{{
-          $t('contextMenu.openInBrowser')
+        $t('contextMenu.openInBrowser')
         }}</div>
     </ContextMenu>
   </div>
