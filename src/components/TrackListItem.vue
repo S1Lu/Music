@@ -41,16 +41,18 @@
               :artists="track.ar"
               :exclude="$parent.albumObject.artist.name"
               prefix="-"
-          /></span>
-          <span v-if="isAlbum && (track.mark & 1048576) === 1048576" class="explicit-symbol"
-            ><ExplicitSymbol
+            /></span>
+          <span
+            v-if="isAlbum && (track.mark & 1048576) === 1048576"
+            class="explicit-symbol"
+          ><ExplicitSymbol
           /></span>
         </div>
         <div v-if="!isAlbum" class="artist">
           <span
             v-if="(track.mark & 1048576) === 1048576"
             class="explicit-symbol before-artist"
-            ><ExplicitSymbol :size="15"
+          ><ExplicitSymbol :size="15"
           /></span>
           <ArtistsInLine :artists="artists" />
         </div>
@@ -60,8 +62,8 @@
 
     <div v-if="showAlbumName" class="album">
       <router-link v-if="album && album.id" :to="`/album/${album.id}`">{{
-        album.name
-      }}</router-link>
+          album.name
+        }}</router-link>
       <div></div>
     </div>
 
